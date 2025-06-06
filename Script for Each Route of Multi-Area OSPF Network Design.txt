@@ -1,0 +1,255 @@
+
+======================================================
+Router1 Configuration
+======================================================
+enable
+configure terminal 
+hostname R1
+
+no ip domain-lookup 
+
+line console 0
+exec-timeout 0
+exit
+
+interface gigabitEthernet 0/1
+ip address 190.166.0.1 255.255.255.248
+ip helper-address 195.166.50.2
+no shutdown 
+exit
+
+interface gigabitEthernet 0/0
+ip address 200.10.10.1 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 190.166.0.8 255.255.255.248
+ip helper-address 195.166.50.2
+no shutdown 
+end
+write
+
+
+configure terminal
+router ospf 1
+router-id 1.1.1.1
+network 190.166.0.0 0.0.0.7 area 20
+network 190.166.0.8 0.0.0.7 area 20
+network 200.10.10.0 0.0.0.3 area 20
+end
+write
+
+
+
+======================================================
+Router2 Configuration
+======================================================
+enable
+configure terminal 
+hostname R2
+
+no ip domain-lookup 
+
+line console 0
+exec-timeout 0
+exit
+
+interface gigabitEthernet 0/1
+ip address 212.10.10.2 255.255.255.252
+no shutdown 
+exit
+
+interface gigabitEthernet 0/0
+ip address 200.10.10.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 213.10.10.1 255.255.255.252
+no shutdown 
+end
+write
+
+
+configure terminal
+router ospf 2
+router-id 2.2.2.2
+network 212.10.10.0 0.0.0.3 area 0
+network 213.10.10.0 0.0.0.3 area 0
+network 200.10.10.0 0.0.0.3 area 20 
+end
+write 
+
+
+
+======================================================
+Router3 Configuration
+======================================================
+enable
+configure terminal 
+hostname R3
+
+no ip domain-lookup 
+
+line console 0
+exec-timeout 0
+exit
+
+interface gigabitEthernet 0/1
+ip address 212.10.10.1 255.255.255.252
+no shutdown 
+exit
+
+interface gigabitEthernet 0/0
+ip address 211.10.10.1 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 195.166.50.1 255.255.255.252
+no shutdown 
+end
+write
+
+
+configure terminal
+router ospf 3
+router-id 3.3.3.3
+network 212.10.10.0 0.0.0.3 area 0
+network 195.166.50.0 0.0.0.3 area 0
+network 211.10.10.0 0.0.0.3 area 0 
+end
+write 
+
+
+
+
+======================================================
+Router4 Configuration
+======================================================
+enable
+configure terminal 
+hostname R4
+
+no ip domain-lookup 
+
+line console 0
+exec-timeout 0
+exit
+
+interface gigabitEthernet 0/1
+ip address 214.10.10.2 255.255.255.252
+no shutdown 
+exit
+
+interface gigabitEthernet 0/2
+ip address 213.10.10.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/0
+ip address 190.166.0.17 255.255.255.248
+ip helper-address 195.166.50.2
+no shutdown 
+end
+write
+
+
+configure terminal
+router ospf 4
+router-id 4.4.4.4
+network 213.10.10.0 0.0.0.3 area 0
+network 214.10.10.0 0.0.0.3 area 0
+network 190.166.0.16 0.0.0.7 area 30
+end
+write
+
+
+
+
+======================================================
+Router5 Configuration
+======================================================
+enable
+configure terminal 
+hostname R5
+
+no ip domain-lookup 
+
+line console 0
+exec-timeout 0
+exit
+
+interface gigabitEthernet 0/1
+ip address 214.10.10.1 255.255.255.252
+no shutdown 
+exit
+
+interface gigabitEthernet 0/0
+ip address 211.10.10.2 255.255.255.252
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 200.10.10.1 255.255.255.252
+no shutdown 
+end
+write
+
+
+configure terminal
+router ospf 5
+router-id 5.5.5.5
+network 211.10.10.0 0.0.0.3 area 0
+network 200.10.10.0 0.0.0.3 area 10
+network 214.10.10.0 0.0.0.3 area 0 
+end
+write
+
+
+
+======================================================
+Router6 Configuration
+======================================================
+enable
+configure terminal 
+hostname R6
+
+no ip domain-lookup 
+
+line console 0
+exec-timeout 0
+exit
+
+interface gigabitEthernet 0/1
+ip address 190.166.0.33 255.255.255.248
+ip helper-address 195.166.50.2
+no shutdown 
+exit
+
+interface gigabitEthernet 0/0
+ip address 190.166.0.25 255.255.255.248
+ip helper-address 195.166.50.2
+no shutdown
+exit
+
+interface gigabitEthernet 0/2
+ip address 200.10.10.2 255.255.255.252
+no shutdown 
+end
+write
+
+
+configure terminal
+router ospf 6
+router-id 6.6.6.6
+network 190.166.0.32 0.0.0.7 area 10
+network 200.10.10.0 0.0.0.3 area 10
+network 190.166.0.24 0.0.0.7 area 10 
+end
+write
+
+
+
+
