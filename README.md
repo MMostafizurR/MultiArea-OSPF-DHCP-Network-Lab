@@ -1,5 +1,5 @@
 # MultiArea-OSPF-DHCP-Network-Lab
-
+![Network Topology Diagram](https://github.com/MMostafizurR/MultiArea-OSPF-DHCP-Network-Lab/blob/e339e078a4542de2f07d083e142e61fa965006a8/Full%20Image%20of%20Cisco%20Packet%20Tracer%20Lab.png "Overall Network Design")
 Multi-Area OSPF & DHCP Network Design
 This repository showcases a comprehensive multi-area OSPF network design implemented in Cisco Packet Tracer. It demonstrates scalable routing across multiple OSPF areas (Area 0, 10, 20, 30) using Area Border Routers (ABRs), alongside the integration of centralized DHCP services via DHCP Relay Agents for efficient IP address management.
 
@@ -8,7 +8,10 @@ This project provides a fully functional and detailed Cisco Packet Tracer lab en
 
 The core of this lab is a multi-area OSPF (Open Shortest Path First) routing domain. It meticulously segments the network into a robust OSPF Area 0 (backbone), connecting three distinct non-backbone areas: Area 10, Area 20, and Area 30. This hierarchical design is implemented using Cisco routers configured as Area Border Routers (ABRs), showcasing how to scale OSPF and reduce routing table complexity efficiently.
 
+![Network Topology Diagram](https://github.com/MMostafizurR/MultiArea-OSPF-DHCP-Network-Lab/blob/e339e078a4542de2f07d083e142e61fa965006a8/DHCP%20Server%20Configuration.png "DHCP Server Configuration")
+
 Beyond routing, the lab integrates critical network services. A centralized DHCP server is deployed to dynamically assign IP addresses to end-user devices. To ensure seamless connectivity for clients across different network segments, DHCP Relay Agents (ip helper-address) are meticulously configured on the routers, forwarding DHCP requests to the central server.
+![Network Topology Diagram](https://github.com/MMostafizurR/MultiArea-OSPF-DHCP-Network-Lab/blob/e339e078a4542de2f07d083e142e61fa965006a8/DHCP%20Server%20IP.png "DHCP Server IP")
 
 Why OSPF for this Project?
 OSPF was chosen for this network design due to its suitability for complex and scalable enterprise environments. Key reasons include:
@@ -58,9 +61,14 @@ Multi-Area Concept: In a multi-area design, like this project, a special Area 0 
 
 This continuous process of exchanging LSAs and running SPF ensures that all OSPF routers have an up-to-date and accurate view of the network topology, allowing for efficient and dynamic routing decisions.
 
+![Network Topology Diagram](https://github.com/MMostafizurR/MultiArea-OSPF-DHCP-Network-Lab/blob/e339e078a4542de2f07d083e142e61fa965006a8/IP%20Configuration%20For%20each%20PC.png "IP Configuration For each PC")
+
 Project Files:
-[Your_Project_Name].pkt: The Cisco Packet Tracer file contains the complete network topology and configurations.
+MultiArea-OSPF-DHCP-Network-Lab.pkt The Cisco Packet Tracer file contains the complete network topology and configurations.
 
 Router_Configurations_Scripts/: A folder containing individual .txt configuration scripts for each router (R1-R6). These files allow for quick, direct pasting of configurations into Cisco routers, facilitating easy setup, replication, and testing of the OSPF and DHCP Relay configurations within the Packet Tracer environment.
 
 Project_Guide.pdf: A comprehensive guide for the project, including the detailed network topology diagram, complete router configurations, and essential setup/verification steps for the Cisco Packet Tracer lab.
+
+![Network Topology Diagram](https://github.com/MMostafizurR/MultiArea-OSPF-DHCP-Network-Lab/blob/e339e078a4542de2f07d083e142e61fa965006a8/Ping%20PC1%20to%20PC6.png "Ping PC1 to PC6")
+
